@@ -1,0 +1,80 @@
+FAIL test/client.spec.ts
+  ● Test suite failed to run
+
+    [96msrc/services.ts[0m:[93m24[0m:[93m44[0m - [91merror[0m[90m TS2345: [0mArgument of type 'Uint8Array<ArrayBufferLike> | null | undefined' is not assignable to parameter of type 'Uint8Array<ArrayBufferLike> | Reader'.
+      Type 'undefined' is not assignable to type 'Uint8Array<ArrayBufferLike> | Reader'.
+
+    [7m24[0m         return krpc.schema.Services.decode(result.value);
+    [7m  [0m [91m                                           ~~~~~~~~~~~~[0m
+    [96msrc/services.ts[0m:[93m31[0m:[93m48[0m - [91merror[0m[90m TS2345: [0mArgument of type 'string | null | undefined' is not assignable to parameter of type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+
+    [7m31[0m             const serviceName = this.camelCase(service.name);
+    [7m  [0m [91m                                               ~~~~~~~~~~~~[0m
+    [96msrc/services.ts[0m:[93m32[0m:[93m50[0m - [91merror[0m[90m TS2345: [0mArgument of type 'IService' is not assignable to parameter of type 'Service'.
+      Property 'toJSON' is missing in type 'IService' but required in type 'Service'.
+
+    [7m32[0m             const serviceApi = this.buildService(service);
+    [7m  [0m [91m                                                 ~~~~~~~[0m
+
+      [96msrc/proto/krpc.d.ts[0m:[93m1303[0m:[93m20[0m
+        [7m1303[0m             public toJSON(): { [k: string]: any };
+        [7m    [0m [96m                   ~~~~~~[0m
+        'toJSON' is declared here.
+    [96msrc/services.ts[0m:[93m35[0m:[93m41[0m - [91merror[0m[90m TS2345: [0mArgument of type 'string | null | undefined' is not assignable to parameter of type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+
+    [7m35[0m             this.client.registerService(service.name, serviceApi);
+    [7m  [0m [91m                                        ~~~~~~~~~~~~[0m
+    [96msrc/services.ts[0m:[93m47[0m:[93m21[0m - [91merror[0m[90m TS2538: [0mType 'null' cannot be used as an index type.
+
+    [7m47[0m             classes[cls.name] = {
+    [7m  [0m [91m                    ~~~~~~~~[0m
+    [96msrc/services.ts[0m:[93m47[0m:[93m21[0m - [91merror[0m[90m TS2538: [0mType 'undefined' cannot be used as an index type.
+
+    [7m47[0m             classes[cls.name] = {
+    [7m  [0m [91m                    ~~~~~~~~[0m
+    [96msrc/services.ts[0m:[93m56[0m:[93m17[0m - [91merror[0m[90m TS18049: [0m'procedure.name' is possibly 'null' or 'undefined'.
+
+    [7m56[0m             if (procedure.name.includes('_')) {
+    [7m  [0m [91m                ~~~~~~~~~~~~~~[0m
+    [96msrc/services.ts[0m:[93m57[0m:[93m31[0m - [91merror[0m[90m TS18049: [0m'procedure.name' is possibly 'null' or 'undefined'.
+
+    [7m57[0m                 const parts = procedure.name.split('_');
+    [7m  [0m [91m                              ~~~~~~~~~~~~~~[0m
+    [96msrc/services.ts[0m:[93m62[0m:[93m77[0m - [91merror[0m[90m TS2345: [0mArgument of type 'IProcedure' is not assignable to parameter of type 'Procedure'.
+      Property 'toJSON' is missing in type 'IProcedure' but required in type 'Procedure'.
+
+    [7m62[0m                      this.attachClassMember(classes[className], memberName, procedure, service.name);
+    [7m  [0m [91m                                                                            ~~~~~~~~~[0m
+
+      [96msrc/proto/krpc.d.ts[0m:[93m1430[0m:[93m20[0m
+        [7m1430[0m             public toJSON(): { [k: string]: any };
+        [7m    [0m [96m                   ~~~~~~[0m
+        'toJSON' is declared here.
+    [96msrc/services.ts[0m:[93m71[0m:[93m45[0m - [91merror[0m[90m TS2345: [0mArgument of type 'string | null | undefined' is not assignable to parameter of type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+
+    [7m71[0m             const procName = this.camelCase(procedure.name);
+    [7m  [0m [91m                                            ~~~~~~~~~~~~~~[0m
+    [96msrc/services.ts[0m:[93m73[0m:[93m59[0m - [91merror[0m[90m TS2345: [0mArgument of type 'string | null | undefined' is not assignable to parameter of type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+
+    [7m73[0m                 return this.invokeProcedure(service.name, procedure.name, args, procedure);
+    [7m  [0m [91m                                                          ~~~~~~~~~~~~~~[0m
+    [96msrc/services.ts[0m:[93m75[0m:[93m55[0m - [91merror[0m[90m TS2345: [0mArgument of type 'string | null | undefined' is not assignable to parameter of type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+
+    [7m75[0m             this.attachMetadata(invoke, service.name, procedure.name, procedure);
+    [7m  [0m [91m                                                      ~~~~~~~~~~~~~~[0m
+    [96msrc/services.ts[0m:[93m108[0m:[93m81[0m - [91merror[0m[90m TS2345: [0mArgument of type 'IType | null | undefined' is not assignable to parameter of type 'IType'.
+      Type 'undefined' is not assignable to type 'IType'.
+
+    [7m108[0m         return this.client.invoke(service, procedure, args, procDef.parameters, procDef.returnType);
+    [7m   [0m [91m                                                                                ~~~~~~~~~~~~~~~~~~[0m
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        4.236 s
+Ran all test suites.

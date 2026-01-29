@@ -1,0 +1,24 @@
+FAIL test/client.spec.ts
+  ● Test suite failed to run
+
+    [96msrc/decoding.ts[0m:[93m34[0m:[93m42[0m - [91merror[0m[90m TS2345: [0mArgument of type 'Long' is not assignable to parameter of type 'number | Long'.
+      Type 'Long' is missing the following properties from type 'Long': add, and, compare, comp, and 64 more.
+
+    [7m34[0m                 return this.classFactory(id, type.service!, type.name!);
+    [7m  [0m [91m                                         ~~[0m
+    [96msrc/decoding.ts[0m:[93m48[0m:[93m45[0m - [91merror[0m[90m TS2345: [0mArgument of type 'Uint8Array<ArrayBufferLike> | null | undefined' is not assignable to parameter of type 'Uint8Array<ArrayBufferLike>'.
+      Type 'undefined' is not assignable to type 'Uint8Array<ArrayBufferLike>'.
+
+    [7m48[0m                     const key = this.decode(entry.key, type.types![0]);
+    [7m  [0m [91m                                            ~~~~~~~~~[0m
+    [96msrc/decoding.ts[0m:[93m49[0m:[93m47[0m - [91merror[0m[90m TS2345: [0mArgument of type 'Uint8Array<ArrayBufferLike> | null | undefined' is not assignable to parameter of type 'Uint8Array<ArrayBufferLike>'.
+      Type 'undefined' is not assignable to type 'Uint8Array<ArrayBufferLike>'.
+
+    [7m49[0m                     const value = this.decode(entry.value, type.types![1]);
+    [7m  [0m [91m                                              ~~~~~~~~~~~[0m
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        4.692 s
+Ran all test suites.
