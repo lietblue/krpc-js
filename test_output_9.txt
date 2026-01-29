@@ -1,0 +1,29 @@
+FAIL test/client.spec.ts
+  ● Test suite failed to run
+
+    [96mtest/mock-server.ts[0m:[93m38[0m:[93m45[0m - [91merror[0m[90m TS2322: [0mType 'string | NonSharedBuffer' is not assignable to type 'Uint8Array<ArrayBufferLike>'.
+      Type 'string' is not assignable to type 'Uint8Array<ArrayBufferLike>'.
+
+    [7m38[0m             buffer = Buffer.concat([buffer, data]);
+    [7m  [0m [91m                                            ~~~~[0m
+    [96mtest/mock-server.ts[0m:[93m63[0m:[93m46[0m - [91merror[0m[90m TS2322: [0mType 'string | NonSharedBuffer' is not assignable to type 'Uint8Array<ArrayBufferLike>'.
+      Type 'string' is not assignable to type 'Uint8Array<ArrayBufferLike>'.
+
+    [7m63[0m              buffer = Buffer.concat([buffer, data]);
+    [7m  [0m [91m                                             ~~~~[0m
+    [96mtest/mock-server.ts[0m:[93m105[0m:[93m46[0m - [91merror[0m[90m TS2345: [0mArgument of type 'IProcedureCall' is not assignable to parameter of type 'ProcedureCall'.
+      Property 'toJSON' is missing in type 'IProcedureCall' but required in type 'ProcedureCall'.
+
+    [7m105[0m                 results.push(this.handleCall(call));
+    [7m   [0m [91m                                             ~~~~[0m
+
+      [96msrc/proto/krpc.d.ts[0m:[93m455[0m:[93m20[0m
+        [7m455[0m             public toJSON(): { [k: string]: any };
+        [7m   [0m [96m                   ~~~~~~[0m
+        'toJSON' is declared here.
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        4.428 s
+Ran all test suites.
